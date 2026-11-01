@@ -1,0 +1,27 @@
+name: Student Information Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  student-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Display the start message
+      - name: Display Start Message
+        run: echo "Student Information Pipeline Started"
+
+      # 3. Display contents of student.txt
+      - name: Display student.txt Contents
+        run: cat student.txt
+
+      # 4. Display the completion message
+      - name: Display Completion Message
+        run: echo "Pipeline Execution Completed"
